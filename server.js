@@ -2,6 +2,7 @@ const express = require("express");
 const app= express();
 require("dotenv").config();
 const cors= require('cors');
+const path = require("path");
 const connection= require("./dbconnection");
 
 app.use(express.json());
@@ -15,9 +16,12 @@ app.use('/api/books', require('./routes/bookRoute'));
 app.use('/api/users', require("./routes/userRoute"));
 app.use('/api/orders', require("./routes/ordersRoute"));
 
-if(process.env.NODE_ENV==='production'){
-    app.use(express.static('frontend/build'));
-};
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "../build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../build", "index.html"))
+    })
+}
 
 //port listening
 app.listen(port, ()=> {
