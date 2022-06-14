@@ -111,6 +111,6 @@ export const newBooksAction=()=> async (dispatch)=> {
         const response= await axios.get(`${process.env.REACT_APP_BACKEND}/api/books/newarrival`);
         dispatch({type: "NEW_BOOKSINFO_SUCCESS", payload: response.data});
     } catch (error) {
-        dispatch({type: "NEW_BOOKSINFO_FAILED"});
+        dispatch({type: "NEW_BOOKSINFO_FAILED", payload: error});
     }
 }
