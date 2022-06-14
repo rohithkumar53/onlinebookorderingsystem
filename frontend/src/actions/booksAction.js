@@ -7,7 +7,7 @@ export const getAllBooksAction=()=> async (dispatch)=>{
         console.log(response.data);
         dispatch({type:'GET_BOOKS_SUCCESS', payload: response.data});
     } catch (error) {
-        console.log(error);
+        console.log("error is", error);
         dispatch({type:'GET_BOOKS_FAILED', payload: error});
     }
 }
