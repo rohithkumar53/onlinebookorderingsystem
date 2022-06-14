@@ -1,0 +1,21 @@
+import './App.css';
+import Navbar from './components/Navbar';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Home from './display/Home';
+import Description from './display/Description';
+import Cart from './display/Cart';
+function App() {
+  return (
+    <div className="App">
+      <Navbar/>
+      <BrowserRouter>
+        <Route path='/' component={Home} exact/>
+        <Route path="/description/:id" component={Description}/>
+        <Route path="/cart" component={Cart}/>
+      </BrowserRouter>
+      
+    </div>
+  );
+}
+
+export default App;

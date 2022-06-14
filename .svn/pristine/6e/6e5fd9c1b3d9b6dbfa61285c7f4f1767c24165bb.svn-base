@@ -1,0 +1,33 @@
+import React from 'react'
+
+export default function Signin() {
+  return (
+    <div className="registration">
+            <div className='row w-100'>
+                <div className='col-md-7 fullform'>
+                    <div className="form-section">
+                        <div className="title">
+                            <h3>Sign Into Your Account</h3>
+                        </div>
+                        <div className="registartion-form">
+                            <form action="">
+                                <div className="form-group">
+                                    <input type="email" className="form-control" placeholder='Email' />
+                                    <i className="fa-solid fa-envelope"></i>
+                                </div>
+                                <div className="form-group">
+                                    <input type="password" className="form-control" placeholder='Password' />
+                                    <i className="fa-solid fa-lock"></i>
+                                </div>
+                                <div className="form-group">
+                                    <button className='btn w-100'>Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+  )
+}

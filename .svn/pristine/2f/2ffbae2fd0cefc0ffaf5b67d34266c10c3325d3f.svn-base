@@ -1,0 +1,26 @@
+import axios from 'axios';
+export const getAllBooksAction=()=> async (dispatch)=>{
+
+    try {
+        dispatch({type:'GET_BOOKS_REQUEST'});
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND}/api/books/getallbooks`);
+        console.log(response.data);
+        dispatch({type:'GET_BOOKS_SUCCESS', payload: response.data});
+    } catch (error) {
+        console.log(error);
+        dispatch({type:'GET_BOOKS_FAILED', payload: error});
+    }
+}
+
+export const getSpecificBookByIdAction=(id)=> async (dispatch)=>{
+
+    try {
+        dispatch({type:'GET_BOOKBYID_REQUEST'});
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND}/api/books/getbookbyid/${id}`);
+        console.log(response.data);
+        dispatch({type:'GET_BOOKBYID_SUCCESS', payload: response.data});
+    } catch (error) {
+        console.log(error);
+        dispatch({type:'GET_BOOKBYID_FAILED', payload: error});
+    }
+}

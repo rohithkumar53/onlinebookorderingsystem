@@ -1,0 +1,14 @@
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import thunk from "redux-thunk";
+import { getAllBooksReducer, getBookByIdReducer } from "../reducers/booksReducer";
+import { addToCartReducer } from "../reducers/cartReducer";
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+
+const finalReducer= combineReducers({getAllBooksReducer: getAllBooksReducer, getBookByIdReducer: getBookByIdReducer, addToCartReducer: addToCartReducer});
+
+const composeEnhancers = composeWithDevTools({
+});
+const store= createStore(finalReducer, composeEnhancers(applyMiddleware(thunk)));
+
+export default store;

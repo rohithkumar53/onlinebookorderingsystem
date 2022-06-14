@@ -1,0 +1,60 @@
+export const registerUserReducer = (state = {}, action) => {
+    const { type, payload } = action;
+    switch (type) {
+        case "REGISTER_USER_REQUEST":
+            return {
+                ...state,
+                loading: true
+            }
+        case "REGISTER_USER_SUCCESS":
+            return {
+                ...state,
+                success: true,
+                loading: false
+
+            }
+        case "REGISTER_USER_FAILED":
+            return {
+                ...state,
+                error: payload.message,
+                loading: false
+            }
+        default: return state;
+    }
+}
+
+export const userLoginReducer = (state = {}, action) => {
+    const { type, payload } = action;
+    switch (type) {
+        case "LOGIN_USER_REQUEST":
+            return {
+                ...state,
+                loading: true
+            }
+        case "LOGIN_USER_SUCCESS":
+            return {
+                ...state,
+                success: true,
+                error: false,
+                loading: false
+
+            }
+        case "LOGIN_USER_FAILED":
+            return {
+                ...state,
+                success: false,
+                error: payload.message,
+                loading: false
+            }
+        case "LOGOUT_USER":
+            return {
+                ...state
+            }
+        case "LOGOUT_FAILED":
+            return {
+                ...state,
+                error: "Logout failed"
+            }
+        default: return state;
+    }
+}

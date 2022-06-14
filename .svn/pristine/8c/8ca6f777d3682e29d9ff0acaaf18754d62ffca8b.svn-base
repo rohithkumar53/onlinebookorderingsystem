@@ -1,0 +1,42 @@
+import React from 'react'
+
+export default function Signup() {
+    return (
+        <div className="registration">
+            <div className='row w-100'>
+                <div className='col-md-7 fullform'>
+                    <div className="form-section">
+                        <div className="title">
+                            <h3>Create A New Account</h3>
+                        </div>
+                        <div className="registartion-form">
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder='Name' />
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder='Email' />
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder='Password' />
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder='Verify Password' />
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="form-group">
+                                    <button className='btn w-100'>Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    )
+}

@@ -1,0 +1,15 @@
+import axios from "axios";
+export const registerUser=(registerdetails)=> async (dispatch)=>{
+
+    try {
+        dispatch({type: "REGISTER_USER_REQUEST"});
+        const response= await axios.post(`${process.env.REACT_APP_BACKEND}/api/users/registration`, registerdetails);
+        //console.log(response.data);
+        dispatch({type: "REGISTER_USER_SUCCESS"});
+        return Promise.resolve(response.data);
+    } catch (error) {
+        //console.log("from inside actions page error",error);
+        dispatch({type: "REGISTER_USER_FAILED"});
+        return Promise.reject(error);
+    }
+}

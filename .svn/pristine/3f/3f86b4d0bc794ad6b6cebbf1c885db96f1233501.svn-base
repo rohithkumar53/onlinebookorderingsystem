@@ -1,0 +1,13 @@
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import thunk from "redux-thunk";
+import { getAllBooksReducer } from "../reducers/booksReducer";
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+
+const finalReducer= combineReducers({getAllBooksReducer: getAllBooksReducer});
+
+const composeEnhancers = composeWithDevTools({
+});
+const store= createStore(finalReducer, composeEnhancers(applyMiddleware(thunk)));
+
+export default store;

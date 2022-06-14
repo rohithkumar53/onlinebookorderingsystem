@@ -1,0 +1,17 @@
+const Book= require('../models/bookModel');
+
+
+exports.findBooks= async (req, res) =>{
+    try {
+        const books = await Book.find({});
+        if(!books){
+            return res.status(406).json({message: "No books present!!"});
+        }
+        else{
+            return res.send(books);
+        }
+    } catch (error) {
+        return res.status(400).json({error: error});
+    }
+
+}

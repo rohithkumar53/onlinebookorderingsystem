@@ -1,0 +1,20 @@
+import React from 'react'
+import StripeCheckout from 'react-stripe-checkout';
+import { useDispatch } from 'react-redux';
+import { orderPayment } from '../actions/ordersAction';
+export default function Paymentcheckout({amttopay}) {
+    const dispatch=useDispatch();
+    const handleToken=(token)=>{
+        dispatch(orderPayment(token, amttopay));
+        console.log(token);
+    }
+    return (
+        <div>
+            <StripeCheckout token={handleToken} amount={amttopay*100} currency="GBP" shippingAddress stripeKey={process.env.REACT_APP_PUBLISHKEY}>
+                <div>
+                    <button className='btn btn-dark'>Make Payment</button>
+                </div>
+            </StripeCheckout>
+        </div>
+    )
+}

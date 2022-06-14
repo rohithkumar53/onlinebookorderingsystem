@@ -1,0 +1,32 @@
+const Book= require('../models/bookModel');
+
+
+exports.findBooks= async (req, res) =>{
+    try {
+        const books = await Book.find({});
+        if(!books){
+            return res.status(406).json({message: "No books present!!"});
+        }
+        else{
+            return res.send(books);
+        }
+    } catch (error) {
+        return res.status(400).json({error: error});
+    }
+
+}
+
+exports.findBookById= async (req, res)=>{
+    try {
+        const id= req.params.bookid;
+        const book= await Book.findById(id);
+        if(!book){
+            return res.status(406).json({message: "No book found with that ID!!"})
+        }
+        else{
+            res.send(book);
+        }
+    } catch (error) {
+        return res.status(400).json({error: error});
+    }
+}

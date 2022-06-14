@@ -1,0 +1,26 @@
+{
+  "name": "onlinebookorderingsystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "cd frontend && npm run build",
+    "install-client":"cd frontend && npm install",
+    "heroku-postbuild":"npm run install-client && npm run build",
+    "server": "nodemon server.js",
+    "client": "cd frontend && npm start",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "rohithpampari",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "concurrently": "^7.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.5",
+    "stripe": "^8.212.0",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,7 @@
+import React from 'react'
+
+export default function Addbookadmin() {
+  return (
+    <div>Addbookadmin</div>
+  )
+}
