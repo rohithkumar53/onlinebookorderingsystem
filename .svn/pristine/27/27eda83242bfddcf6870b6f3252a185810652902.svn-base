@@ -1,7 +1,0 @@
-import React from 'react'
-
-export default function Usersadmin() {
-  return (
-    <div>Usersadmin</div>
-  )
-}
