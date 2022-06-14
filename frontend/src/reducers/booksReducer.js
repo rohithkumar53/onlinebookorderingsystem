@@ -174,7 +174,7 @@ export const newBooksReducer= (state={newbooks:[]}, action) =>{
         case "NEW_BOOKSINFO_FAILED":
             return {
                 ...state,
-                error: payload.response.data.error,
+                error: "something gone wrong!!",
                 loading: false
             }
         default: return state;
