@@ -20,8 +20,8 @@ export default function Signin() {
         }
         const legal= dispatch(userLogin(logindetails));
         legal.then(data => {
-            history.push("/");
-            // window.location.href="/";
+            //history.push("/");
+            window.location.href="/";
         }).catch(error=> {
             console.log(error);
         })

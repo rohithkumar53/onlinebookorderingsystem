@@ -26,7 +26,7 @@ export default function Cart() {
                         </tr>
                     </thead>
                     <tbody>
-                        {book.map((eachbook, index) => {
+                        {book.length && book.map((eachbook, index) => {
                             return <tr key={index}>
                                 <td>{index + 1}</td>
                                 <td>{eachbook.name}</td>
